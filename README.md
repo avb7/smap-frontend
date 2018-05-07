@@ -18,4 +18,7 @@ We're going to be using Xamarin.Forms to build the front-end for both iOS and An
 
   
  ## Layered Architecture 
- MVVM vs MVC. To be decided. 
+ We'll be using the Prism MVVM package to build the MVVM layered architecture. Please refer to this document to understand how we're going to set it up. 
+ 
+ - Prism MVVM for .NET
+ https://prismlibrary.github.io/docs/xamarin-forms/Getting-Started.html
