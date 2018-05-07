@@ -16,6 +16,11 @@ namespace SMAP
             MainPage = new SMAPPage();
         }
 
+		protected override void OnInitialized()
+		{
+			throw new NotImplementedException();
+		}
+
 		protected override void RegisterTypes(IContainerRegistry containerRegistry)
 		{
 			//throw new NotImplementedException();
