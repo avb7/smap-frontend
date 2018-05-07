@@ -6,7 +6,7 @@ Welcome to the Smap's front-end repository. The purpose of the README is to esta
 
 We're going to be using Xamarin.Forms to build the front-end for both iOS and Android. Here's a few links that will assist you with the development
 
-     Xamarin Documentation (https://docs.microsoft.com/en-us/xamarin/)
+- Xamarin Documentation https://docs.microsoft.com/en-us/xamarin/
   
  ## Project Layout
  - ### SMAP (Core)
