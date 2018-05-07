@@ -7,6 +7,8 @@ using UIKit;
 using Prism;
 using Prism.Ioc;
 
+
+
 namespace SMAP.iOS
 {
     [Register("AppDelegate")]
@@ -17,10 +19,16 @@ namespace SMAP.iOS
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsGoogleMaps.Init("AIzaSyBcWRuiHKkwpSErX9YQBkYBcEEQE6Yyjc0");
 
+            //Image circle
+            ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
+
             // Code for starting up the Xamarin Test Cloud Agent
 #if DEBUG
+
             Xamarin.Calabash.Start();
 #endif
+
+
 
             LoadApplication(new App(new iOSInitializer()));
 

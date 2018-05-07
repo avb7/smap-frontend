@@ -23,6 +23,9 @@ namespace SMAP.Droid
 
             base.OnCreate(bundle);
 
+            //Image circle
+            ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer.Init();
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             LoadApplication(new App(new AndroidInitializer()));

@@ -3,6 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
     x:Class="SMAP.Views.DashboardPage">
     <ContentPage.Content>
         <Grid>
@@ -11,6 +12,8 @@
                 <RowDefinition Height="30*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30*"/>
+                <ColumnDefinition Width="70*"/>
                 
             </Grid.ColumnDefinitions>
 
@@ -18,13 +21,34 @@
             <maps:Map
                 Grid.Row="0"
                 Grid.RowSpan="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 x:Name="map"
                 InitialCameraUpdate="32.715736, -117.161087, 13, 30, 60"
                 VerticalOptions="FillAndExpand" />
 
+            <!-- Profile Picture -->
+            <StackLayout
+                Padding="0,50,0,0"
+                Grid.Row="0"
+                Grid.Column="0"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="CenterAndExpand">
+               
+              <controls:CircleImage 
+                WidthRequest="50"
+                HeightRequest="50"
+                BorderColor="#008AFF"
+                BorderThickness="2"
+                Source="DummyDP.png"/>
+            </StackLayout>
+
+            
             <!-- Search Bar -->
             <StackLayout 
                 Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
                 Padding="30,0,30,0"
                 VerticalOptions="CenterAndExpand">
                 

@@ -16,6 +16,8 @@ namespace SMAP.Views
             InitializeComponent();
 
             map.MapStyle = MapStyle.FromJson(getMapStyleJson());
+            _pinTokyo.Icon = _pinTokyo.Icon = BitmapDescriptorFactory.FromBundle("RedPin.png");
+            map.Pins.Add(_pinTokyo);
         }
 
         public string getMapStyleJson(){
@@ -29,5 +31,16 @@ namespace SMAP.Views
 
             return text;
         }
+
+        // The pin
+        readonly Pin _pinTokyo = new Pin()
+        {
+            Type = PinType.Place,
+            Label = "A$AP Mob",
+            Address = "San Diego, California",
+            Position = new Position(32.727387, -117.162186),
+            Icon = BitmapDescriptorFactory.DefaultMarker(Color.LightBlue)
+
+        };
     }
 }
