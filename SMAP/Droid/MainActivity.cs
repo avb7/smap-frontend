@@ -8,6 +8,9 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using Prism;
+using Prism.Ioc;
+
 namespace SMAP.Droid
 {
     [Activity(Label = "SMAP.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -22,7 +25,15 @@ namespace SMAP.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
-            LoadApplication(new App());
+            LoadApplication(new App(new AndroidInitializer()));
+        }
+
+        public class AndroidInitializer : IPlatformInitializer
+        {
+            public void RegisterTypes(IContainerRegistry containerRegistry)
+            {
+                
+            }
         }
     }
 }

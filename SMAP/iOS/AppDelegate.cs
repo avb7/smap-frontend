@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
 using Foundation;
 using UIKit;
+
+using Prism;
+using Prism.Ioc;
 
 namespace SMAP.iOS
 {
@@ -14,14 +16,25 @@ namespace SMAP.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
+
             // Code for starting up the Xamarin Test Cloud Agent
 #if DEBUG
-			Xamarin.Calabash.Start();
+            Xamarin.Calabash.Start();
 #endif
 
-            LoadApplication(new App());
+            LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
         }
+
+        public class iOSInitializer : IPlatformInitializer
+        {
+            public void RegisterTypes(IContainerRegistry containerRegistry)
+            {
+                
+            }
+        }
+
+
     }
 }
