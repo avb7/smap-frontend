@@ -21,6 +21,11 @@ namespace SMAP
 			throw new NotImplementedException();
 		}
 
+        /* 
+         * Method - RegisterTypes
+         * Purpose - To add the pages to the navigation registry 
+         *
+        */
 		protected override void RegisterTypes(IContainerRegistry containerRegistry)
 		{
 			//throw new NotImplementedException();
