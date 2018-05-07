@@ -4,6 +4,8 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
 using Xamarin.Forms;
+using SMAP.Views;
+using SMAP.ViewModels;
 
 namespace SMAP
 {
@@ -12,13 +14,12 @@ namespace SMAP
         public App(IPlatformInitializer initializer = null) : base(initializer) 
         {
             InitializeComponent();
-
-            MainPage = new SMAPPage();
+            NavigationService.NavigateAsync("DashboardPage");
         }
 
 		protected override void OnInitialized()
 		{
-			throw new NotImplementedException();
+			//throw new NotImplementedException();
 		}
 
         /* 
@@ -28,7 +29,8 @@ namespace SMAP
         */
 		protected override void RegisterTypes(IContainerRegistry containerRegistry)
 		{
-			//throw new NotImplementedException();
+            //throw new NotImplementedException();
+            containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
 		}
 
 		protected override void OnStart()
