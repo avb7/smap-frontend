@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+    x:Class="SMAP.Views.DashboardPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <maps:Map
+                x:Name="map"
+                InitialCameraUpdate="32.715736, -117.161087, 13, 30, 60"
+                VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
