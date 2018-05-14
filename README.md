@@ -26,6 +26,6 @@ We're going to be using Xamarin.Forms to build the front-end for both iOS and An
  https://xamgirl.com/prism-in-xamarin-forms-step-by-step-part-1/
 
 
-## Mapbox SDK for Xamarin.Forms 
+## Google Maps for Xamarin.Forms 
 Please read the documentation here 
-https://github.com/NAXAM/mapbox-xamarin-forms
+https://github.com/amay077/Xamarin.Forms.GoogleMaps
