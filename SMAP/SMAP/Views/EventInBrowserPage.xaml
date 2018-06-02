@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SMAP.Views.EventInBrowserPage"
+    BackgroundColor="Black">
+    <ContentPage.Content>
+
+        <!--Main stack -->
+        <StackLayout>
+
+            <!-- Header -->
+            <StackLayout 
+                HeightRequest="50"
+                BackgroundColor="Black"
+                Orientation="Horizontal"
+                Padding="30,0,30,0">
+
+                  <Button 
+                    HorizontalOptions="StartAndExpand"
+                    Text="X"
+                    FontSize="24"    
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#EABA19"
+                    VerticalOptions="CenterAndExpand"/>
+                
+            </StackLayout>
+
+            <!-- WebView -->
+            <StackLayout VerticalOptions="FillAndExpand">
+                <WebView
+                    VerticalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SMAP.Views.EventsDetailPage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <!-- Main Stack Layout-->
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80*"/>
+                <RowDefinition Height="20*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Content stack -->
+            <StackLayout Grid.Row="0" Grid.RowSpan="2">
+                
+            <!-- Close button stack -->
+            <StackLayout Padding="30,20,30,0">
+                
+                <Button 
+                    HorizontalOptions="StartAndExpand"
+                    Text="X"
+                    FontSize="24"    
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#EABA19"/>
+            </StackLayout>
+
+            <!-- Header (Title, Image) -->
+            <StackLayout Padding="0,0,0,0">
+
+                <StackLayout Padding="30,0,30,0">
+                   <Label 
+                        Text="A$AP Mob Concert"
+                        FontSize="24"
+                        TextColor="White"/>
+                    <Label 
+                        Text="FINANCIAL DISTRICT"
+                        FontSize="13"
+                        TextColor="White"/>
+                </StackLayout>
+
+
+                <!-- Image -->
+                <Image Source="DummyEventImage.png"/>
+                
+            </StackLayout>
+
+
+            <!-- Event Details -->
+            <StackLayout Padding="30,20,30,0">
+
+                <!-- Description -->
+                <StackLayout Padding="0,0,0,10">
+                    <Label
+                        Text="Description"
+                        TextColor="White"
+                        FontSize="24"
+                        />
+                    <Label
+                        Text="This is a very cool event."
+                        TextColor="White"
+                        FontSize="13"
+                        />
+                </StackLayout>
+                
+
+                <!-- When (Time) -->
+                <StackLayout Padding="0,0,0,10">
+                    <Label
+                        Text="When"
+                        TextColor="White"
+                        FontSize="24"
+                        />
+                    <Label
+                        Text="XX/XX/XXX, Monday, 6pm"
+                        TextColor="White"
+                        FontSize="13"
+                        />
+                </StackLayout>
+
+                
+            </StackLayout>
+            </StackLayout>
+
+            <!-- end of Content Stack-->
+
+            <!-- Action button stack -->
+            <StackLayout Grid.Row="1" Padding="50,0,50,0">
+
+                <Button
+                    VerticalOptions="CenterAndExpand"
+                    Text="Open in Browser"
+                    BackgroundColor="#EABA19"
+                    TextColor="White"
+                    BorderRadius="20"
+                    />
+                
+            </StackLayout>
+
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
