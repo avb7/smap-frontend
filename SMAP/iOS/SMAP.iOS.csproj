@@ -135,6 +135,9 @@
     <Reference Include="ImageCircle.Forms.Plugin.iOS">
       <HintPath>..\packages\Xam.Plugins.Forms.ImageCircle.2.0.2\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SMAP\SMAP.csproj">
@@ -165,6 +168,11 @@
     <BundleResource Include="Resources\SearchBar.png" />
     <BundleResource Include="Resources\RedPin.png" />
     <BundleResource Include="Resources\DummyDP.png" />
+    <BundleResource Include="Resources\DummyEventImage.png" />
+    <BundleResource Include="Resources\SearchButton.png" />
+    <BundleResource Include="Resources\LoginPageBackground.png" />
+    <BundleResource Include="Resources\LoginWithFacebookButton.png" />
+    <BundleResource Include="Resources\SmapLoginIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.122203\build\netstandard1.0\Xamarin.Forms.targets')" />

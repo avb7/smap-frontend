@@ -22,6 +22,10 @@ namespace SMAP.ViewModels
             throw new NotImplementedException();
         }
 
+		public async void OpenEventsDetail(){
+			await _navigationService.NavigateAsync("EventsDetailPage");
+		}
+
 
     }
 }

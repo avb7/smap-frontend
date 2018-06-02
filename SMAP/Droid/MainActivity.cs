@@ -28,6 +28,8 @@ namespace SMAP.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
+			Xamarin.FormsGoogleMaps.Init(this, bundle); // initialize for Xamarin.Forms.GoogleMaps
+
             LoadApplication(new App(new AndroidInitializer()));
         }
 

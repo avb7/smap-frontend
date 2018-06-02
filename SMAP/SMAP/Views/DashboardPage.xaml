@@ -38,8 +38,8 @@
               <controls:CircleImage 
                 WidthRequest="50"
                 HeightRequest="50"
-                BorderColor="#008AFF"
-                BorderThickness="2"
+                BorderThickness="3"
+                BorderColor="#EABA19"
                 Source="DummyDP.png"/>
             </StackLayout>
 
@@ -47,13 +47,14 @@
             <!-- Search Bar -->
             <StackLayout 
                 Grid.Row="1"
-                Grid.Column="0"
-                Grid.ColumnSpan="2"
+                Grid.Column="1"
+                Grid.ColumnSpan="1"
                 Padding="30,0,30,0"
+                HorizontalOptions="EndAndExpand"
                 VerticalOptions="CenterAndExpand">
                 
                 <Button 
-                    Image="SearchBar.png"
+                    Image="SearchButton.png"
                     />
                 
             </StackLayout>

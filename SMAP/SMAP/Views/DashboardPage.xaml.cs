@@ -3,21 +3,29 @@ using System.Reflection;
 using System.IO;
 using System.Collections.Generic;
 using Xamarin.Forms.GoogleMaps;
-
 using Xamarin.Forms;
+using SMAP.ViewModels;
 
 namespace SMAP.Views
 {
     public partial class DashboardPage : ContentPage
     {
 
+     
+
         public DashboardPage()
         {
             InitializeComponent();
 
+
+
             map.MapStyle = MapStyle.FromJson(getMapStyleJson());
             _pinTokyo.Icon = _pinTokyo.Icon = BitmapDescriptorFactory.FromBundle("RedPin.png");
+
+			map.PinClicked += Map_PinClicked;
             map.Pins.Add(_pinTokyo);
+            
+
         }
 
         public string getMapStyleJson(){
@@ -39,8 +47,32 @@ namespace SMAP.Views
             Label = "A$AP Mob",
             Address = "San Diego, California",
             Position = new Position(32.727387, -117.162186),
-            Icon = BitmapDescriptorFactory.DefaultMarker(Color.LightBlue)
-
+            Icon = BitmapDescriptorFactory.DefaultMarker(Color.LightBlue),
+           
+           
         };
+
+
+		async void Map_PinClicked(object sender, PinClickedEventArgs e)
+        {
+			// Get the viewmodel from the DataContext
+            var vm = BindingContext as DashboardPageViewModel;
+            
+			await DisplayAlert("Pin Clicked", $"{e.Pin.Label} Clicked.", "Close");
+
+			vm.OpenEventsDetail();
+
+            // If you set e.Handled = true,
+            // then Pin selection doesn't work automatically.
+            // All pin selection operations are delegated to you.
+            // Sample codes are below.
+            //if (switchHandlePinClicked.IsToggled)
+            //{
+            //    map.SelectedPin = e.Pin;
+            //    map.MoveToRegion(MapSpan.FromCenterAndRadius(e.Pin.Position, Distance.FromMeters(500)), true);
+            //}
+        }
+
+
     }
 }

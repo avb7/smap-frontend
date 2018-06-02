@@ -11,7 +11,11 @@ namespace SMAP
 {
     public partial class App : PrismApplication
     {
-        
+
+        public App(){
+            
+        }
+
         public App(IPlatformInitializer initializer = null) : base(initializer) 
         {
             InitializeComponent();
@@ -32,7 +36,12 @@ namespace SMAP
 		{
             //throw new NotImplementedException();
             containerRegistry.RegisterForNavigation<DashboardPage, DashboardPageViewModel>();
+			containerRegistry.RegisterForNavigation<EventsDetailPage, EventsDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<MenuPage, MenuPageViewModel>();
+            containerRegistry.RegisterForNavigation<EventInBrowserPage, EventInBrowserPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
 		}
+
 
 		protected override void OnStart()
         {
