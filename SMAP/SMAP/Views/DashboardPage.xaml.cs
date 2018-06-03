@@ -17,11 +17,13 @@ namespace SMAP.Views
         {
             InitializeComponent();
 
-
-
+            //Set map style 
             map.MapStyle = MapStyle.FromJson(getMapStyleJson());
+
+            //TODO Better way to handle icon ref
             _pinTokyo.Icon = _pinTokyo.Icon = BitmapDescriptorFactory.FromBundle("RedPin.png");
 
+            //TODO Better way to handle event clicks, create methods 
 			map.PinClicked += Map_PinClicked;
             map.Pins.Add(_pinTokyo);
             
@@ -40,7 +42,7 @@ namespace SMAP.Views
             return text;
         }
 
-        // The pin
+        // TODO , make methods The pin
         readonly Pin _pinTokyo = new Pin()
         {
             Type = PinType.Place,
