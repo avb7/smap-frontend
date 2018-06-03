@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using SMAP.Models;
 
 namespace SMAP.Services
 {
-    public class UserService
+	public class UserService 
     {
 
+        HttpClient client;
         /*
             getById
             getByEmail 
@@ -19,6 +21,8 @@ namespace SMAP.Services
 
         public UserService()
         {
+            client = new HttpClient();
+            client.MaxResponseContentBufferSize = 256000;
         }
 
         /*
