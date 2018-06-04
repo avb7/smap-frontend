@@ -22,6 +22,7 @@ namespace SMAP.ViewModels
             throw new NotImplementedException();
         }
 
+        //get info by id, call the method in the back 
 
     }
 }

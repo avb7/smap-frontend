@@ -26,6 +26,19 @@ namespace SMAP.ViewModels
 			await _navigationService.NavigateAsync("EventsDetailPage");
 		}
 
+        //fill map
+        //Open event info 
+        //Open profile page 
+        //Open 
+
+
+        /*
+
+        1. Constructor loads all the events on the map (fill map)
+        2. Write two helper methods "open profile" and "open event info" on prism mvvm stack 
+        3. ICommands to call these methods 
+        
+        */
 
     }
 }
