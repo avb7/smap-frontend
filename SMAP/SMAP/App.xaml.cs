@@ -19,6 +19,8 @@ namespace SMAP
         public App(IPlatformInitializer initializer = null) : base(initializer) 
         {
             InitializeComponent();
+
+            //START PAGE (Add login checks?)
             NavigationService.NavigateAsync("DashboardPage");
         }
 
