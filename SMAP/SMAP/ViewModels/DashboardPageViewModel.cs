@@ -14,17 +14,22 @@ namespace SMAP.ViewModels
 
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 		public async void OpenEventsDetail(){
 			await _navigationService.NavigateAsync("EventsDetailPage");
 		}
+
+        public async void OpenLogin()
+        {
+            await _navigationService.NavigateAsync("LoginPage");
+        }
 
         //fill map
         //Open event info 

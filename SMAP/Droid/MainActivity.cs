@@ -23,6 +23,9 @@ namespace SMAP.Droid
 
             base.OnCreate(bundle);
 
+            //Xam Auth 
+            global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, bundle);
+
             //Image circle
             ImageCircle.Forms.Plugin.Droid.ImageCircleRenderer.Init();
 

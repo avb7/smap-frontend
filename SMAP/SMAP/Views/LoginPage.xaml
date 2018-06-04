@@ -37,7 +37,13 @@
 
                 <Image 
                     Source="LoginWithFacebookButton.png"
-                    Aspect="AspectFit"/>
+                    Aspect="AspectFit">
+
+                 <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OnLogin}"/>
+                 </Image.GestureRecognizers>
+                </Image>
+                
             </StackLayout>
             
 

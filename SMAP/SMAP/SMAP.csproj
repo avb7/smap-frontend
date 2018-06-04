@@ -89,6 +89,9 @@
     <Compile Include="Services\EventService.cs" />
     <Compile Include="Services\MissionService.cs" />
     <Compile Include="Helpers\Settings.cs" />
+    <Compile Include="Helpers\Constants.cs" />
+    <Compile Include="Helpers\AuthenticationState.cs" />
+    <Compile Include="Helpers\FacebookOAuthToken.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />

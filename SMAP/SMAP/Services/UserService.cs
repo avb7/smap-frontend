@@ -10,12 +10,12 @@ namespace SMAP.Services
 
         HttpClient client;
         /*
-            getById
-            getByEmail 
-            getAll
-
-            getFriends(int UserId)
-            Create
+            - getById
+            - getByEmail 
+            - getAll
+            
+            - getFriends(int UserId)
+            - Create
             
         */
 

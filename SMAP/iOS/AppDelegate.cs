@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Foundation;
 using UIKit;
-
+using SMAP.Helpers;
 using Prism;
 using Prism.Ioc;
 
@@ -18,6 +18,10 @@ namespace SMAP.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             Xamarin.FormsGoogleMaps.Init("AIzaSyBcWRuiHKkwpSErX9YQBkYBcEEQE6Yyjc0");
+
+
+            //Xam Auth 
+            global::Xamarin.Auth.Presenters.XamarinIOS.AuthenticationConfiguration.Init();
 
             //Image circle
             ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
@@ -41,6 +45,17 @@ namespace SMAP.iOS
             {
                 
             }
+        }
+
+        public override bool OpenUrl(UIApplication app, NSUrl url, NSDictionary options)
+        {
+            // Convert NSUrl to Uri
+            var uri = new Uri(url.AbsoluteString);
+
+            // Load redirectUrl page
+            AuthenticationState.Authenticator.OnPageLoading(uri);
+
+            return true;
         }
 
 

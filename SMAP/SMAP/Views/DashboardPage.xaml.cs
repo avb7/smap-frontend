@@ -62,7 +62,7 @@ namespace SMAP.Views
             
 			await DisplayAlert("Pin Clicked", $"{e.Pin.Label} Clicked.", "Close");
 
-			vm.OpenEventsDetail();
+            vm.OpenLogin();
 
             // If you set e.Handled = true,
             // then Pin selection doesn't work automatically.
