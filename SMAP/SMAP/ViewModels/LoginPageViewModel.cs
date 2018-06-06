@@ -90,6 +90,7 @@ namespace SMAP.ViewModels
                        e.Account.Properties["access_token"]
                 };
                 // Do something
+
             }
             else
             {
