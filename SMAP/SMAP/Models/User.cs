@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace SMAP.Models
 {
-    public class User : BindableBase
+    public class User 
     {
 
         public int UserId { get; set; }

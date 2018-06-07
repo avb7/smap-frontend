@@ -1,7 +1,5 @@
 ﻿using System;
 using Newtonsoft.Json;
-using SMAP.Services;
-using SMAP.Models;
 using System.Threading.Tasks;
 
 using System.Net.Http;
@@ -10,22 +8,23 @@ using System.Collections.Generic;
 using System.Text;
 using System.Net;
 using System.IO;
-using System.Xml;
+
 using Refit;
 
-namespace SMAP.Test
+namespace SMAP.ServicesAccess
 {
     class MainClass
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("SMAP API Tests!!");
+            Console.WriteLine("Hello World!");
 
-            var smapAPI = RestService.For<ISmapAPI>("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1");
+            TestService service = new TestService();
 
-            User user_1 = smapAPI.GetUser("test1").GetAwaiter().GetResult();
+            var gitHubApi = RestService.For<ISmapAPI>("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1");
 
-            Console.WriteLine(user_1.last_name);
+            User octocat = gitHubApi.GetUser("test1").GetAwaiter().GetResult();
+            Console.WriteLine(octocat.last_name);
         }
 
     }
@@ -46,7 +45,7 @@ namespace SMAP.Test
         //string yyyy-mm-dd
         public string birthday { get; set; }
 
-        public IDictionary<int, Location> location { get; set; }
+        public IDictionary<string, string> location { get; set; }
         public User()
         {
         }
@@ -58,9 +57,19 @@ namespace SMAP.Test
         Task<User> GetUser(string email_id);
     }
 
-   /* class TestService{
+    class TestService
+    {
 
 
+
+
+
+
+
+
+
+
+        /*
         public void GetUser(string emailAdd)
         {
 
@@ -73,8 +82,14 @@ namespace SMAP.Test
 
             var response = client.Execute(request);
 
-            Console.WriteLine(response.StatusCode);
+            //String filters for C#
+            var resp = response.Content.ToString().Replace("False", "false");
+            resp = resp.Replace("True", "true");
+            resp = resp.Replace("None", "null");
+            //String filters for C#
 
+            Console.WriteLine(resp);
+            var _user =  JsonConvert.DeserializeObject<User>(resp);
 
             /*
             HttpClient client = new HttpClient();
@@ -99,7 +114,7 @@ namespace SMAP.Test
 
             return user;
 
-
+            Console.WriteLine(_user.last_name);
 
         }
 
@@ -146,7 +161,7 @@ namespace SMAP.Test
 
 
 
-        }*/
+            */
 
     }
 

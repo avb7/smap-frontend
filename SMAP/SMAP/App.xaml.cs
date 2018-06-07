@@ -79,14 +79,5 @@ namespace SMAP
             _Token = token;
         }
 
-        public static Action SuccessfulLoginAction
-        {
-            get
-            {
-                return new Action(() => {
-                    _NavPage.Navigation.PopModalAsync();
-                });
-            }
-        }
     }
 }

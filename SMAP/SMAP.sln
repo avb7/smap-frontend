@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMAP.UITests", "UITests\SMA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMAP.Test", "SMAP.Test\SMAP.Test.csproj", "{9F2466C8-29E8-415D-BD1E-9FC354874AB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SMAP.ServiceTest", "SMAP.ServiceTest\SMAP.ServiceTest.csproj", "{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,5 +83,17 @@ Global
 		{9F2466C8-29E8-415D-BD1E-9FC354874AB7}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{9F2466C8-29E8-415D-BD1E-9FC354874AB7}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
 		{9F2466C8-29E8-415D-BD1E-9FC354874AB7}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Release|iPhone.Build.0 = Release|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{87807C1E-57A2-48D6-9CE8-FFBFC04D8EA1}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
