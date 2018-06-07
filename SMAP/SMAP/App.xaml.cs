@@ -59,5 +59,34 @@ namespace SMAP
         {
             // Handle when your app resumes
         }
+
+
+        //AUTH STUFF BELOW 
+
+        public static bool IsLoggedIn
+        {
+            get { return !string.IsNullOrWhiteSpace(_Token); }
+        }
+
+        static string _Token;
+        public static string Token
+        {
+            get { return _Token; }
+        }
+
+        public static void SaveToken(string token)
+        {
+            _Token = token;
+        }
+
+        public static Action SuccessfulLoginAction
+        {
+            get
+            {
+                return new Action(() => {
+                    _NavPage.Navigation.PopModalAsync();
+                });
+            }
+        }
     }
 }
