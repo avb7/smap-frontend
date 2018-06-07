@@ -14,24 +14,24 @@ namespace SMAP.Models
     public class Event
     {
         int Id { get; set; }
-        string Name { get; set; }
-        string ImageUrl { get; set; }
-        string Type { get; set; }
+        string name { get; set; }
+        string image { get; set; }
+        string type { get; set; }
 
-        string HostEmail { get; set; }
-        string Description { get; set; }
-        Location Location { get; set; }
+        string host { get; set; }
+        string description { get; set; }
+        Location location { get; set; }
 
         //yyyy-mm-dd
-        string Date { get; set; }
+        string event_date { get; set; }
         //hh:mm:ss
-        string StartTime { get; set; }
+        string start_date { get; set; }
         //hh:mm:ss
-        string EndTime { get; set; }
+        string end_time { get; set; }
 
-        bool IsPublic { get; set; }
-        bool IsFree { get; set; }
-        int Points { get; set; }
+        bool is_public { get; set; }
+        bool is_free { get; set; }
+        int points { get; set; }
 
 
         public Event()
