@@ -116,7 +116,6 @@ namespace SMAP.Test
 
             request.AddParameter("application/json; charset=utf-8", body, ParameterType.RequestBody);
             request.RequestFormat = DataFormat.Json;
-
             var response = client.Execute(request);
 
             Console.WriteLine(response.StatusCode);
