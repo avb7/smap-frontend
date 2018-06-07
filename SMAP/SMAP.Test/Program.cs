@@ -22,7 +22,7 @@ namespace SMAP.Test
 
             TestService service = new TestService();
             service.PostUser("sevagtester@test.com");
-
+            service.GetUser("lol");
             //foreach (User item in x){
             //    Console.WriteLine(item.email);
             //}
@@ -31,7 +31,51 @@ namespace SMAP.Test
     }
 
     class TestService{
-        
+
+
+        public void GetUser(string emailAdd)
+        {
+
+            var client = new RestClient("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1");
+
+            var request = new RestRequest("/users", Method.GET);
+
+            request.AddParameter("email", "test1");
+            request.RequestFormat = DataFormat.Json;
+
+            var response = client.Execute(request);
+
+            Console.WriteLine(response.StatusCode);
+
+
+            /*
+            HttpClient client = new HttpClient();
+            Uri uri = new Uri("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1" + "/users");
+            client.BaseAddress = uri;
+
+            var parameters = new Dictionary<string, string>();
+            parameters["email"] = "test1";
+
+            //var x = JsonConvert.SerializeObject(jsonObj);
+            //Console.WriteLine(x);
+
+
+            HttpResponseMessage response = await client.SendAsync(requestMessage);
+
+            User user = new User();
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                user = JsonConvert.DeserializeObject<User>(content);
+            }
+
+            return user;*/
+
+
+
+        }
+
+
         public void PostUser(string emailAdd)
         {
 
