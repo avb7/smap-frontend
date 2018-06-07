@@ -14,19 +14,21 @@ namespace SMAP.Models
 {
     public class User : BindableBase
     {
-        int UserId { get; set; }
-        string DisplayName { get; set; }
-        string ProfilePic { get; set; }
-        string Email { get; set; }
-        string FirstName { get; set; }
-        string LastName { get; set; }
+
+        public int UserId { get; set; }
+        public string display_name { get; set; }
+        public string profile_pic { get; set; }
+        public string email { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
 
         //default false 
-        bool MissionCurator { get; set; }
+        public bool mission_curator { get; set; }
 
         //string yyyy-mm-dd
-        string Birthday { get; set; }
-
+        public string birthday { get; set; }
+         
+        public IDictionary<int, Location> location { get; set; }
         public User()
         {
         }

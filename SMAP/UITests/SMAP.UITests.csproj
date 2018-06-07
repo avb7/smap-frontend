@@ -46,6 +46,10 @@
       <ReferenceOutputAssembly>False</ReferenceOutputAssembly>
       <Private>False</Private>
     </ProjectReference>
+    <ProjectReference Include="..\SMAP\SMAP.csproj">
+      <Project>{260170E5-C7AC-476A-94F9-B8712E3459B0}</Project>
+      <Name>SMAP</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Tests.cs" />
