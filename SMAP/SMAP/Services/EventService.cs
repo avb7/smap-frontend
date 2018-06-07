@@ -27,7 +27,7 @@ namespace SMAP.Services
         
         public EventService()
         {
-            var client = new HttpClient();
+            client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
         }
 

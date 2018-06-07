@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using SMAP.Models;
+using System.Threading.Tasks;
+using SMAP.Helpers;
+using Newtonsoft.Json;
+using System.Diagnostics; 
 
 namespace SMAP.Services
 {
@@ -9,14 +13,15 @@ namespace SMAP.Services
     {
 
         HttpClient client;
+
         /*
-            - getById
-            - getByEmail 
-            - getAll
-            
-            - getFriends(int UserId)
-            - Create
-            
+        - getById
+        - getByEmail 
+        - getAll
+
+        - getFriends(int UserId)
+        - Create
+
         */
 
         public UserService()
@@ -34,9 +39,26 @@ namespace SMAP.Services
          * Notes - Use the API to GET a user by ID 
          * 
          */
-        public User getById(int id){
+        public async Task<User> getById(string emailAdd){
+            
+            Uri uri = new Uri(Constants.BaseURL + "/users");
+            client.BaseAddress = uri;
+            User user = new User()
+            {
+                email = emailAdd
+            };
 
-            User user = null;
+            var x = JsonConvert.SerializeObject(user);
+             
+            HttpResponseMessage response = await client.GetAsync(x);
+
+            if (response.IsSuccessStatusCode)
+            {
+                string content = await response.Content.ReadAsStringAsync();
+                user = JsonConvert.DeserializeObject<User>(content);
+            }
+
+            Debug.WriteLine(user.email);
             return user;
         }
 
