@@ -20,64 +20,66 @@
                     BackgroundColor="#FAD961"
                     TextColor="#FFFFFF"/>
             </StackLayout>
-            <Grid>
-                <!-- Main Stack Layout-->
-                
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50*"/>
-                    <RowDefinition Height="50*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30*"/>
-                    <ColumnDefinition Width="70*"/>
-                </Grid.ColumnDefinitions>
-            
-                <!-- Content stack-->
-                <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Padding="20,30,20,0">
-                    <!-- Image-->
-                    <Image
-                        Source="DummyDP.png"
-                        HeightRequest="95"
-                        WidthRequest="95"/>
-                </StackLayout>
-                           
-                <StackLayout Grid.Row="0" Grid.Column="1" Padding="20,40,20,0">
-                    <!-- Name-->
-                    <Label
-                        Text="Name"
-                        HorizontalOptions="StartAndExpand"
-                        TextColor="White"
-                        FontSize="24"/>
-                </StackLayout>
 
-                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
-                         
-                    <!-- Accept Button-->
-                    <Button
-                        HorizontalOptions="StartAndExpand"
-                        Text="Accept"
-                        TextColor="White"
-                        FontSize="14"
-                        WidthRequest="92"
-                        HeightRequest="20"
-                        BorderRadius="25"
-                        BackgroundColor="#EABA19"/>
-                    <Button
-                        HorizontalOptions="StartAndExpand"
-                        Text="Reject"
-                        TextColor="White"
-                        FontSize="14"
-                        WidthRequest="92"
-                        HeightRequest="20"
-                        BorderRadius="25"
-                        BackgroundColor="#FF0000"/>
-                </StackLayout>
-            </Grid>
         <ListView BackgroundColor="Black" SeparatorVisibility="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        
+                        <Grid>
+                            <!-- Main Stack Layout-->
+                
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="70*"/>
+                                <RowDefinition Height="30*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30*"/>
+                                <ColumnDefinition Width="70*"/>
+                            </Grid.ColumnDefinitions>
+            
+                            <!-- Content stack-->
+                            <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Padding="20,30,20,0">
+                                <!-- Image-->
+                                <Image
+                                    Source="DummyDP.png"
+                                    HeightRequest="95"
+                                    WidthRequest="95"/>
+                            </StackLayout>
+                           
+                            <StackLayout Grid.Row="0" Grid.Column="1" Padding="20,40,20,0">
+                                <!-- Name-->
+                                <Label
+                                    Text="Name"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="White"
+                                    FontSize="24"/>
+                            </StackLayout>
+
+                            <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                         
+                                <!-- Accept Button-->
+                                <Button
+                                    HorizontalOptions="Start"
+                                    Text="Accept"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    WidthRequest="92"
+                                    HeightRequest="20"
+                                    BorderRadius="15"
+                                    BackgroundColor="#EABA19"/>
+
+                                <!-- Reject Button-->
+                                <Button
+                                    HorizontalOptions="StartAndExpand"
+                                    Text="Reject"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    WidthRequest="92"
+                                    HeightRequest="20"
+                                    BorderRadius="15"
+                                    BackgroundColor="#FF0000"/>
+                            </StackLayout>
+                        </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
