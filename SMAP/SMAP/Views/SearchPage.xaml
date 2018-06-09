@@ -21,9 +21,6 @@
                     TextColor="#FFFFFF"/>
             </StackLayout>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="100*"/>
-                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="30*"/>
                     <ColumnDefinition Width="30*"/> 
@@ -40,10 +37,11 @@
                         HorizontalOptions="StartAndExpand"
                         FontSize="Large"/>
                     <BoxView
+                        IsVisible="True"
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
-                        Color="#797979"/>
-                    
+                        Color="#797979"
+                        x:Name="Users Line"/>
                 </StackLayout>
                 
                 <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" Padding="10,0,10,0">
@@ -55,9 +53,11 @@
                         HorizontalOptions="StartAndExpand"
                         FontSize="Large"/>
                     <BoxView
+                        IsVisible="False"
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
-                        Color="#797979"/>
+                        Color="#797979"
+                        x:Name="Events Line"/>
                 </StackLayout>
                 
                 <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand" Padding="10,0,10,0">
@@ -69,11 +69,181 @@
                         HorizontalOptions="StartAndExpand"
                         FontSize="Large"/>
                     <BoxView
+                        IsVisible="False"
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
-                        Color="#797979"/>
+                        Color="#797979"
+                        x:Name="Missions Line"/>
                 </StackLayout>
             </Grid>
+
+            <!-- Users List-->
+            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="True" x:Name="Users List">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <!-- Main Stack Layout-->
+                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60*"/>
+                                    <RowDefinition Height="30*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+            
+                                <!-- Content stack-->
+                                
+                                <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Padding="20,30,20,0">
+                                    <!-- Image-->
+                                    <Image
+                                        Source="DummyDP.png"
+                                        HeightRequest="70"
+                                        WidthRequest="70"/>
+                                </StackLayout>
+                           
+                                <StackLayout Grid.Row="0" Grid.Column="1" Padding="20,30,20,0">
+                                    <!-- Name-->
+                                    <Label
+                                        Text="Name"
+                                        HorizontalOptions="StartAndExpand"
+                                        TextColor="White"
+                                        FontSize="24"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                         
+                                    <!-- Invite Button-->
+                                    <Button
+                                        x:Name="Invite Visibilty"
+                                        IsVisible="True"
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Invite"
+                                        TextColor="White"
+                                        FontSize="14"
+                                        WidthRequest="150"
+                                        HeightRequest="30"
+                                        BorderRadius="15"
+                                        BackgroundColor="#EABA19"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Events List-->
+            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="False" x:Name="Events List">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <!-- Main Stack Layout-->
+                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60*"/>
+                                    <RowDefinition Height="30*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+            
+                                <!-- Content stack-->
+                                
+                                <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Padding="20,30,20,0">
+                                    <!-- Image-->
+                                    <Image
+                                        Source="DummyDP.png"
+                                        HeightRequest="70"
+                                        WidthRequest="70"/>
+                                </StackLayout>
+                           
+                                <StackLayout Grid.Row="0" Grid.Column="1" Padding="20,30,20,0">
+                                    <!-- Name-->
+                                    <Label
+                                        Text="Name"
+                                        HorizontalOptions="StartAndExpand"
+                                        TextColor="White"
+                                        FontSize="24"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                         
+                                    <!-- Invite Button-->
+                                    <Button
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Event Info"
+                                        TextColor="White"
+                                        FontSize="14"
+                                        WidthRequest="150"
+                                        HeightRequest="20"
+                                        BorderRadius="15"
+                                        BackgroundColor="#EABA19"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <!-- Missions List-->
+            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="False" x:Name="Missions List">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <!-- Main Stack Layout-->
+                
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60*"/>
+                                    <RowDefinition Height="30*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="30*"/>
+                                    <ColumnDefinition Width="70*"/>
+                                </Grid.ColumnDefinitions>
+            
+                                <!-- Content stack-->
+                                
+                                <StackLayout Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Padding="20,30,20,0">
+                                    <!-- Image-->
+                                    <Image
+                                        Source="DummyDP.png"
+                                        HeightRequest="70"
+                                        WidthRequest="70"/>
+                                </StackLayout>
+                           
+                                <StackLayout Grid.Row="0" Grid.Column="1" Padding="20,30,20,0">
+                                    <!-- Name-->
+                                    <Label
+                                        Text="Name"
+                                        HorizontalOptions="StartAndExpand"
+                                        TextColor="White"
+                                        FontSize="24"/>
+                                </StackLayout>
+
+                                <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                         
+                                    <!-- Invite Button-->
+                                    <Button
+                                        HorizontalOptions="StartAndExpand"
+                                        Text="Mission Info"
+                                        TextColor="White"
+                                        FontSize="14"
+                                        WidthRequest="150"
+                                        HeightRequest="20"
+                                        BorderRadius="15"
+                                        BackgroundColor="#EABA19"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
