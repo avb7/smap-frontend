@@ -33,7 +33,7 @@
                 
                 <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" Padding="10,0,10,0">
                     <Button
-                        Text=" Users "
+                        Text="Users"
                         BorderColor="Transparent"
                         BackgroundColor="Transparent"
                         TextColor="White"
@@ -48,30 +48,30 @@
                 
                 <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" Padding="10,0,10,0">
                     <Button
-                    Text=" Events "
-                    BorderColor="Transparent"
-                    BackgroundColor="Transparent"
-                    TextColor="White"
-                    HorizontalOptions="StartAndExpand"
-                    FontSize="Large"/>
+                        Text="Events"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="StartAndExpand"
+                        FontSize="Large"/>
                     <BoxView
-                    HorizontalOptions="FillAndExpand"
-                    HeightRequest="1"
-                    Color="#797979"/>
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="1"
+                        Color="#797979"/>
                 </StackLayout>
                 
                 <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand" Padding="10,0,10,0">
                     <Button
-                    Text=" Missions "
-                    BorderColor="Transparent"
-                    BackgroundColor="Transparent"
-                    TextColor="White"
-                    HorizontalOptions="StartAndExpand"
-                    FontSize="Large"/>
+                        Text="Missions"
+                        BorderColor="Transparent"
+                        BackgroundColor="Transparent"
+                        TextColor="White"
+                        HorizontalOptions="StartAndExpand"
+                        FontSize="Large"/>
                     <BoxView
-                    HorizontalOptions="FillAndExpand"
-                    HeightRequest="1"
-                    Color="#797979"/>
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="1"
+                        Color="#797979"/>
                 </StackLayout>
             </Grid>
         </StackLayout>
