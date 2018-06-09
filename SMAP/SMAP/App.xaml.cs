@@ -21,9 +21,9 @@ namespace SMAP
         {
             InitializeComponent();
 
-            MainPage = new DashboardPage();
             //START PAGE (Add login checks?)
-            //NavigationService.NavigateAsync("DashboardPage");
+            NavigationService.NavigateAsync("DashboardPage");
+
         }
 
 

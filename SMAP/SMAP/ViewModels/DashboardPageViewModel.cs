@@ -10,8 +10,8 @@ namespace SMAP.ViewModels
     public class DashboardPageViewModel : INavigatedAware
     {
         INavigationService _navigationService;
-
-        public ICommand MenuCommand { get; set; }
+        
+		public ICommand MenuCommand {get; set;}
 
         public DashboardPageViewModel(INavigationService navigationService)
         {
@@ -30,7 +30,7 @@ namespace SMAP.ViewModels
             //throw new NotImplementedException();
         }
 
-        public async void OpenMenuPage(){
+        private async void OpenMenuPage(){
             Debug.WriteLine("Clicked");
             await _navigationService.NavigateAsync("MenuPage");
         }

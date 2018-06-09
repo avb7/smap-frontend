@@ -13,14 +13,14 @@ namespace SMAP.Models
 {
     public class Event
     {
-        int Id { get; set; }
+        int event_id { get; set; }
         string name { get; set; }
         string image { get; set; }
         string type { get; set; }
 
         string host { get; set; }
         string description { get; set; }
-        Location location { get; set; }
+        Dictionary<dynamic, dynamic> location { get; set; }
 
         //yyyy-mm-dd
         string event_date { get; set; }

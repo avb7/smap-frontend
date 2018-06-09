@@ -2,6 +2,7 @@
 using SMAP.Models;
 using Refit;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace SMAP.Services
 {
@@ -23,8 +24,14 @@ namespace SMAP.Services
         [Post("/events")]
         Task CreateEvent([Body] Event _event);
 
-        [Get("/users?event_id={_id}&city={_city}")]
-        Task<User> GetEvents(string _id, string _city);
+        [Get("/events?city={_city}")]
+        Task<List<Event>> GetEventsByCity(string _city);
+
+        [Get("/events?event_id={_id}")]
+        Task<Event> GetEventById(int _id);
+
+        [Get("/events")]
+        Task<List<Event>> GetAllEvents();
 
     }
 }

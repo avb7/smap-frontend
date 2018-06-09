@@ -7,13 +7,21 @@
     
     <ContentPage.Content>
         
-        <StackLayout BackgroundColor="Black" Padding="30,0,30,0">
+        <StackLayout BackgroundColor="Black" Padding="30,20,30,0">
 
             
             <!-- Header (Image and Name) -->
             <StackLayout Padding="0,30,0,0" Orientation="Horizontal">
-
+                <Button 
+                    Text="X"
+                    TextColor="#EABA19"
+                    FontSize="24"
+                    VerticalOptions="Center"
+                    BackgroundColor="Transparent"
+                    Command="{Binding CloseWindowCommand}"
+                />
                 <controls:CircleImage 
+                    x:Name="CirclePic"
                     WidthRequest="80"
                     HeightRequest="80"
                     BorderColor="#EABA19"
@@ -21,7 +29,8 @@
                     Source="DummyDP.png"/>
 
                 <Label 
-                    Text="Sanshit Sagar"
+                    x:Name="DisplayName"
+                    Text="Guest"
                     TextColor="White"
                     FontSize="24"
                     VerticalOptions="CenterAndExpand"/>
@@ -31,6 +40,11 @@
             <!-- Links -->
             <StackLayout Padding="0,40,0,0">
 
+
+                <!-- Options -->
+                <StackLayout x:Name="Options">
+                    
+                
                 <!-- Your Private Events -->
                 <StackLayout Padding="0,0,0,5">
                     <Label 
@@ -68,10 +82,26 @@
                         />
                 </StackLayout>
 
-                <!-- Your Private Events -->
+               </StackLayout>
+
+                
+                <!-- Sign in sign out -->
                 <StackLayout Padding="0,50,0,5">
-                    <Label 
+                    <Button 
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start"
+                        x:Name="LogOutButton"
                         Text="Log out"
+                        Command="{Binding OnLogoutCommand}"
+                        TextColor="White"
+                        FontSize="24"
+                        />
+                     <Button 
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="Start"
+                        x:Name="SignInButton"
+                        Text="Log in"
+                        Command="{Binding OnLoginCommand}"
                         TextColor="White"
                         FontSize="24"
                         />
