@@ -40,9 +40,9 @@
                         HorizontalOptions="StartAndExpand"
                         FontSize="Large"/>
                     <BoxView
-                    HorizontalOptions="FillAndExpand"
-                    HeightRequest="1"
-                    Color="#797979"/>
+                        HorizontalOptions="FillAndExpand"
+                        HeightRequest="1"
+                        Color="#797979"/>
                     
                 </StackLayout>
                 
