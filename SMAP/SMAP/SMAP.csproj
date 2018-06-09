@@ -62,6 +62,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\YourEventsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -113,6 +117,10 @@
     <Compile Include="Views\CreateEventPage.xaml.cs">
       <DependentUpon>CreateEventPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\YourEventsPage.xaml.cs">
+      <DependentUpon>YourEventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AddFriendPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

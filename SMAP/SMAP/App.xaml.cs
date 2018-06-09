@@ -42,6 +42,7 @@ namespace SMAP
             containerRegistry.RegisterForNavigation<MenuPage, MenuPageViewModel>();
             containerRegistry.RegisterForNavigation<EventInBrowserPage, EventInBrowserPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddFriendPage, AddFriendPageViewModel>();
 		}
 
 
