@@ -20,7 +20,12 @@
                     BackgroundColor="#FAD961"
                     TextColor="#FFFFFF"/>
             </StackLayout>
-            <Grid>
+
+        <ListView BackgroundColor="Black" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
                             <!-- Main Stack Layout-->
                 
                             <Grid.RowDefinitions>
@@ -76,16 +81,9 @@
                                     WidthRequest="150"
                                     HeightRequest="30"
                                     BorderRadius="15"
-                                    BackgroundColor="Red"/>
-                                
+                                    BackgroundColor="Red"/>                        
                             </StackLayout>
-          
                         </Grid>
-        <ListView BackgroundColor="Black" SeparatorVisibility="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
