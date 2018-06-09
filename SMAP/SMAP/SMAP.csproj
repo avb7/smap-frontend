@@ -54,6 +54,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddFriendPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -98,6 +102,9 @@
     <Compile Include="Services\ISmapAPI.cs" />
     <Compile Include="Views\FriendRequestPage.xaml.cs">
       <DependentUpon>FriendRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddFriendPage.xaml.cs">
+      <DependentUpon>AddFriendPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup />
