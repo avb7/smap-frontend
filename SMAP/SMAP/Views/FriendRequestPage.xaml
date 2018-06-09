@@ -45,6 +45,7 @@
                     <!-- Name-->
                     <Label
                         Text="Name"
+                        HorizontalOptions="StartAndExpand"
                         TextColor="White"
                         FontSize="24"/>
                 </StackLayout>
