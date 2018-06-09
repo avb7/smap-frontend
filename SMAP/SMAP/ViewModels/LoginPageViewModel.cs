@@ -9,6 +9,10 @@ using Newtonsoft.Json;
 using System.Windows.Input;
 using Prism.Commands;
 using System.Diagnostics;
+using Refit;
+using SMAP.Services;
+using SMAP.Models;
+
 
 namespace SMAP.ViewModels
 {
@@ -22,7 +26,7 @@ namespace SMAP.ViewModels
         public LoginPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
-            OnLogin = new DelegateCommand(OnLoginClicked);
+            OnLogin = new DelegateCommand(Login);
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -39,114 +43,49 @@ namespace SMAP.ViewModels
 
         public void OnLoginClicked()
         {
-            Debug.WriteLine("CALLED");
-            string clientId = null;
-            string redirectUri = null;
-
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    clientId = Constants.iOSClientId;
-                    redirectUri = Constants.iOSRedirectUrl;
-                    break;
-
-                case Device.Android:
-                    clientId = Constants.AndroidClientId;
-                    redirectUri = Constants.AndroidRedirectUrl;
-                    break;
-            }
-
-
-
-            var authenticator = new OAuth2Authenticator(
-                clientId,
-                null,
-                Constants.Scope,
-                new Uri(Constants.AuthorizeUrl),
-                new Uri("http://www.facebook.com/connect/login_success.html"),
-                new Uri(Constants.AuthorizeUrl), null, true)
-            { AllowCancel = true
-            };
-
-            authenticator.Completed += OnAuthCompleted;
-            authenticator.Error += OnAuthError;
-
-            AuthenticationState.Authenticator = authenticator;
-
-            var presenter = new Xamarin.Auth.Presenters.OAuthLoginPresenter();
-            presenter.Login(authenticator);
-
+            _navigationService.NavigateAsync("DashboardPage");
+            Debug.WriteLine("EMAIL IS: " + Settings.UserEmail);
 
         }
 
-        private void OnAuthCompleted(object sender,
-             AuthenticatorCompletedEventArgs e)
-        {
-            if (e.IsAuthenticated)
-            {
-                var token = new FacebookOAuthToken
-                {
-                    AccessToken =
-                       e.Account.Properties["access_token"]
-                };
-                // Do something
+        public async void Login(){
+
+            if(Settings.IsLoggedIn){
+                //Open API
+                var smapAPI = RestService.For<ISmapAPI>("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1");
+
+                //Check user exists 
+                User _user = await smapAPI.GetUser(Settings.UserEmail);
+
+            
+
+                //Exists
+                if (_user != null){
+                    
+                }
+                //Doesn't exist, register
+                else{
+                    Debug.WriteLine("User was null");
+
+                    var names = Settings.UserFullName.Split(' ');
+                    string firstName = names[0];
+                    string lastName = names[1];
+
+                    User newUser = new User()
+                    {
+                        display_name = Settings.UserFullName,
+                        email = Settings.UserEmail,
+                        first_name = firstName,
+                        last_name = lastName
+                    };
+                   string response = await smapAPI.CreateUser(newUser);
+                   Debug.WriteLine("API RESPOSE = " + response);
+                }
+
+               await _navigationService.NavigateAsync("DashboardPage");
 
             }
-            else
-            {
-                // The user is not authenticated
-            }
-        }
 
-
-        void OnAuthError(object sender, AuthenticatorErrorEventArgs e)
-        {
-            var authenticator = sender as OAuth2Authenticator;
-            if (authenticator != null)
-            {
-                authenticator.Completed -= OnAuthCompleted;
-                authenticator.Error -= OnAuthError;
-            }
-
-            //Error, do something
-            //Debug.WriteLine("Authentication error: " + e.Message);
-
-        }
-
-
-        /*****************/
-
-        /*
-         * Continue 
-         * - uses FB SDK and gets email 
-         */
-
-         /*
-          * - bool CheckUserExists  
-          * - Use email to check user exists in the app
-          */
-
-         /*
-          * - POST new user by email 
-          */
-          
-         /*
-          * Update Login Settings
-          * 
-          */
-
-
-        public void Login(){
-
-
-            //Call FB SDK
-
-            //Check exists 
-
-            //Update settings 
-
-            string email = null;
-            UpdateLoginSettings(false, email);
         }
 
         public void Logout(){
@@ -172,6 +111,11 @@ namespace SMAP.ViewModels
                 Settings.UserEmail = email;
             }
         }
+
+
+        //API Stuff 
+
+
 
 
     }

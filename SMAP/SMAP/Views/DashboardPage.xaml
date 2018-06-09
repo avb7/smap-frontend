@@ -36,6 +36,7 @@
                 HorizontalOptions="CenterAndExpand">
                
               <controls:CircleImage 
+                x:Name="CirclePic"    
                 WidthRequest="50"
                 HeightRequest="50"
                 BorderThickness="3"
@@ -56,7 +57,8 @@
                 <Button 
                     Image="SearchButton.png"
                     />
-                
+
+          
             </StackLayout>
 
             

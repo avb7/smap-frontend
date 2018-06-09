@@ -11,7 +11,7 @@ namespace SMAP.Services
         Task<User> GetUser(string email_id);
 
         [Post("/users")]
-        Task CreateUser([Body] User user);
+        Task<string> CreateUser([Body] User user);
 
         [Post("/friends")]
         Task AddFriend([Body] User user1, User user2);

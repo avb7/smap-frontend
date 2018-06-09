@@ -36,6 +36,7 @@
                 Grid.Row="1">
 
                 <Image 
+                    x:Name ="FacebookButton"
                     Source="LoginWithFacebookButton.png"
                     Aspect="AspectFit">
 

@@ -6,15 +6,14 @@ using Prism.Unity;
 using Xamarin.Forms;
 using SMAP.Views;
 using SMAP.ViewModels;
+using Prism.Navigation;
 
 namespace SMAP
 {
     public partial class App : PrismApplication
     {
+        
 
-        public App(){
-            
-        }
 
         public App(IPlatformInitializer initializer = null) : base(initializer) 
         {
@@ -23,6 +22,7 @@ namespace SMAP
             //START PAGE (Add login checks?)
             NavigationService.NavigateAsync("DashboardPage");
         }
+
 
 		protected override void OnInitialized()
 		{
@@ -61,7 +61,11 @@ namespace SMAP
         }
 
 
+
         //AUTH STUFF BELOW 
+        public void NavigateToDashboard(){
+            NavigationService.GoBackAsync();
+        }
 
         public static bool IsLoggedIn
         {
@@ -77,6 +81,16 @@ namespace SMAP
         public static void SaveToken(string token)
         {
             _Token = token;
+        }
+
+       public static Action SuccessfulLoginAction
+        {
+            get
+            {
+                return new Action(() => {
+                   
+                });
+            }
         }
 
     }

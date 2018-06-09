@@ -26,6 +26,8 @@ namespace SMAP.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Auth0.OidcClient.Resource.String.ApplicationName = global::SMAP.Droid.Resource.String.ApplicationName;
+			global::Auth0.OidcClient.Resource.String.Hello = global::SMAP.Droid.Resource.String.Hello;
 			global::Xamarin.Auth.Resource.Animation.slide_in_right = global::SMAP.Droid.Resource.Animation.slide_in_right;
 			global::Xamarin.Auth.Resource.Animation.slide_out_left = global::SMAP.Droid.Resource.Animation.slide_out_left;
 			global::Xamarin.Auth.Resource.Boolean.abc_action_bar_embed_tabs = global::SMAP.Droid.Resource.Boolean.abc_action_bar_embed_tabs;
@@ -3958,6 +3960,12 @@ namespace SMAP.Droid
 		
 		public partial class String
 		{
+			
+			// aapt resource value: 0x7f080051
+			public const int ApplicationName = 2131230801;
+			
+			// aapt resource value: 0x7f080050
+			public const int Hello = 2131230800;
 			
 			// aapt resource value: 0x7f080027
 			public const int abc_action_bar_home_description = 2131230759;

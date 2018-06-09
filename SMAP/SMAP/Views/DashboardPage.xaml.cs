@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using Xamarin.Forms.GoogleMaps;
 using Xamarin.Forms;
 using SMAP.ViewModels;
+using System.Diagnostics;
+using SMAP.Helpers;
 
 namespace SMAP.Views
 {
@@ -12,10 +14,21 @@ namespace SMAP.Views
     {
 
      
+        public void ShowUserPicture(){
+            if(Settings.UserImageUrl != null){
+                CirclePic.Source = Settings.UserImageUrl;
+            }
+            else{
+                CirclePic.Source = "DummyDP.png";
+            }
+        }
 
         public DashboardPage()
         {
             InitializeComponent();
+
+
+            ShowUserPicture();
 
             //Set map style 
             map.MapStyle = MapStyle.FromJson(getMapStyleJson());
@@ -26,7 +39,8 @@ namespace SMAP.Views
             //TODO Better way to handle event clicks, create methods 
 			map.PinClicked += Map_PinClicked;
             map.Pins.Add(_pinTokyo);
-            
+
+
 
         }
 

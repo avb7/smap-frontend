@@ -27,6 +27,7 @@ namespace SMAP.Helpers
         private const string IsLoggedKey = "IsLoggedKey";
         private const string UserEmailKey = "UserEmailKey";
         private const string UserImageKey = "UserImageKey";
+        private const string UserFullNameKey = "UserFullNameKey";
 
 		#endregion
 
@@ -78,6 +79,17 @@ namespace SMAP.Helpers
             }
         }
 
+        public static string UserFullName
+        {
+            get
+            {
+                return AppSettings.GetValueOrDefault(UserFullNameKey, null);
+            }
+            set
+            {
+                AppSettings.AddOrUpdateValue(UserFullNameKey, value);
+            }
+        }
 	}
 }
 
