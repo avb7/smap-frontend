@@ -61,7 +61,7 @@
                                 <!-- Accept Button-->
                                 <Button
                                     HorizontalOptions="StartAndExpand"
-                                    Text="Invite"
+                                    Text="Add to Event"
                                     TextColor="White"
                                     FontSize="14"
                                     WidthRequest="150"
