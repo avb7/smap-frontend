@@ -43,12 +43,10 @@
                 BorderColor="#EABA19"
                 Source="DummyDP.png">
 
-                <controls:CircleImage.GestureRecognizers>
-                        <TapGestureRecognizer
-                            Tapped="{Binding MenuCommand}"
-                            NumberOfTapsRequired="1"
-                        />
-                    </controls:CircleImage.GestureRecognizers>
+                 <controls:CircleImage.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding MenuCommand}" />
+                </controls:CircleImage.GestureRecognizers>
                     
                </controls:CircleImage>   
 

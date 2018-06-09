@@ -27,7 +27,7 @@
 
             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
                 <Entry
-                    x:Name="Event Title"
+                    x:Name="EventTitle"
                     Text="Enter event title"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
@@ -41,7 +41,7 @@
 
             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
                 <Entry
-                    x:Name="Event Address"
+                    x:Name="EventAddress"
                     Text="Enter address"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
@@ -55,7 +55,7 @@
 
             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
                 <Entry
-                    x:Name="Event Start Date"
+                    x:Name="EventStartDate"
                     Text="Start date"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
@@ -69,7 +69,7 @@
 
             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
                 <Entry
-                    x:Name="Event End Date"
+                    x:Name="EventEndDate"
                     Text="End date"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
@@ -84,7 +84,7 @@
 
             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
                 <Entry
-                    x:Name="Event Description"
+                    x:Name="EventDescription"
                     Text="Description"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"

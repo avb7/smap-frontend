@@ -41,7 +41,7 @@
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
                         Color="#797979"
-                        x:Name="Users Line"/>
+                        x:Name="UsersLine"/>
                 </StackLayout>
                 
                 <StackLayout Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" Padding="10,0,10,0">
@@ -57,7 +57,7 @@
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
                         Color="#797979"
-                        x:Name="Events Line"/>
+                        x:Name="EventsLine"/>
                 </StackLayout>
                 
                 <StackLayout Grid.Row="0" Grid.Column="2" HorizontalOptions="CenterAndExpand" Padding="10,0,10,0">
@@ -73,12 +73,12 @@
                         HorizontalOptions="FillAndExpand"
                         HeightRequest="1"
                         Color="#797979"
-                        x:Name="Missions Line"/>
+                        x:Name="MissionsLine"/>
                 </StackLayout>
             </Grid>
 
             <!-- Users List-->
-            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="True" x:Name="Users List">
+            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="True" x:Name="UsersList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -117,7 +117,7 @@
                          
                                     <!-- Invite Button-->
                                     <Button
-                                        x:Name="Invite Visibilty"
+                                        x:Name="InviteVisibilty"
                                         IsVisible="True"
                                         HorizontalOptions="StartAndExpand"
                                         Text="Invite"
@@ -135,7 +135,7 @@
             </ListView>
 
             <!-- Events List-->
-            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="False" x:Name="Events List">
+            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="False" x:Name="EventsList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -191,7 +191,7 @@
 
 
             <!-- Missions List-->
-            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="False" x:Name="Missions List">
+            <ListView BackgroundColor="Black" SeparatorVisibility="None" IsVisible="False" x:Name="MissionsList">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
