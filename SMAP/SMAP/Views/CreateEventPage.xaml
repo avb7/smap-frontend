@@ -98,7 +98,7 @@
 
             <StackLayout Orientation="Horizontal" Padding="20,20,10,0">
                 <Button
-                    Text="Add Friend +"
+                    Text="Add Friends +"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
                     TextColor="#797979"

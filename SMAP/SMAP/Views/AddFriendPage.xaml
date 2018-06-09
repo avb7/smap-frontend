@@ -20,12 +20,7 @@
                     BackgroundColor="#FAD961"
                     TextColor="#FFFFFF"/>
             </StackLayout>
-
-        <ListView BackgroundColor="Black" SeparatorVisibility="None">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
+            <Grid>
                             <!-- Main Stack Layout-->
                 
                             <Grid.RowDefinitions>
@@ -43,8 +38,8 @@
                                 <!-- Image-->
                                 <Image
                                     Source="DummyDP.png"
-                                    HeightRequest="95"
-                                    WidthRequest="95"/>
+                                    HeightRequest="80"
+                                    WidthRequest="80"/>
                             </StackLayout>
                            
                             <StackLayout Grid.Row="0" Grid.Column="1" Padding="20,40,20,0">
@@ -58,18 +53,39 @@
 
                             <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
                          
-                                <!-- Accept Button-->
+                                <!-- Add to Event Button-->
                                 <Button
+                                    x:Name="EventButton"
+                                    IsVisible="true"
                                     HorizontalOptions="StartAndExpand"
-                                    Text="Add to Event"
+                                    Text="Add"
                                     TextColor="White"
                                     FontSize="14"
                                     WidthRequest="150"
                                     HeightRequest="30"
                                     BorderRadius="15"
                                     BackgroundColor="#EABA19"/>
+                                <Button
+                                    x:Name="RemoveButton"
+                                    IsVisible="false"
+                                    HorizontalOptions="StartAndExpand"
+                                    FontAttributes="Bold"
+                                    Text="Remove"
+                                    TextColor="White"
+                                    FontSize="14"
+                                    WidthRequest="150"
+                                    HeightRequest="30"
+                                    BorderRadius="15"
+                                    BackgroundColor="Red"/>
+                                
                             </StackLayout>
+          
                         </Grid>
+        <ListView BackgroundColor="Black" SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
