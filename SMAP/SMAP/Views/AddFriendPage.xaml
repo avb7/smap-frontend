@@ -47,7 +47,7 @@
                                     WidthRequest="95"/>
                             </StackLayout>
                            
-                            <StackLayout Grid.Row="0" Grid.Column="1" Padding="45,40,20,0">
+                            <StackLayout Grid.Row="0" Grid.Column="1" Padding="20,40,20,0">
                                 <!-- Name-->
                                 <Label
                                     Text="Name"
