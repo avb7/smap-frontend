@@ -13,25 +13,25 @@ namespace SMAP.Models
 {
     public class Event
     {
-        int event_id { get; set; }
-        string name { get; set; }
-        string image { get; set; }
-        string type { get; set; }
+        public int event_id { get; set; }
+        public string name { get; set; }
+        public string image { get; set; }
+        public string type { get; set; }
 
-        string host { get; set; }
-        string description { get; set; }
-        Dictionary<dynamic, dynamic> location { get; set; }
+        public string host { get; set; }
+        public string description { get; set; }
+        public Dictionary<dynamic, dynamic> location { get; set; }
 
         //yyyy-mm-dd
-        string event_date { get; set; }
+        public string event_date { get; set; }
         //hh:mm:ss
-        string start_date { get; set; }
+        public string start_date { get; set; }
         //hh:mm:ss
-        string end_time { get; set; }
+        public string end_time { get; set; }
 
-        bool is_public { get; set; }
-        bool is_free { get; set; }
-        int points { get; set; }
+        public bool is_public { get; set; }
+        public bool is_free { get; set; }
+        public int points { get; set; }
 
 
         public Event()

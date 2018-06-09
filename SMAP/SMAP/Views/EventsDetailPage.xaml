@@ -21,6 +21,7 @@
                     HorizontalOptions="StartAndExpand"
                     Text="X"
                     FontSize="24"    
+                    Command="{Binding CloseWindowCommand}"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
                     TextColor="#EABA19"/>
@@ -31,7 +32,7 @@
 
                 <StackLayout Padding="30,0,30,0">
                    <Label 
-                        Text="A$AP Mob Concert"
+                        Text="{Binding _Event.name}"
                         FontSize="24"
                         TextColor="White"/>
                     <Label 
@@ -42,7 +43,7 @@
 
 
                 <!-- Image -->
-                <Image Source="DummyEventImage.png"/>
+                <Image Source="{Binding _Event.image}"/>
                 
             </StackLayout>
 
@@ -58,7 +59,7 @@
                         FontSize="24"
                         />
                     <Label
-                        Text="This is a very cool event."
+                        Text="{Binding _Event.description}"
                         TextColor="White"
                         FontSize="13"
                         />
@@ -73,7 +74,7 @@
                         FontSize="24"
                         />
                     <Label
-                        Text="XX/XX/XXX, Monday, 6pm"
+                        Text="{Binding _Event.start_date}"
                         TextColor="White"
                         FontSize="13"
                         />

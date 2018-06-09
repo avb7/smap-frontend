@@ -82,39 +82,11 @@ namespace SMAP.ViewModels
                    Debug.WriteLine("API RESPOSE = " + response);
                 }
 
-               await _navigationService.NavigateAsync("DashboardPage");
+                await _navigationService.NavigateAsync("/DashboardPage");
 
             }
 
         }
-
-        public void Logout(){
-         //update login settings to logout 
-         UpdateLoginSettings(true, null);
-
-            //navigate to login page
-            //todo move it to profile page 
-        }
-
-        bool checkLoggedIn(){
-            return Settings.IsLoggedIn;
-        }
-
-
-        void UpdateLoginSettings(bool LogOut, string email){
-            if(LogOut){
-                Settings.IsLoggedIn = false;
-                Settings.UserEmail = null;
-            }
-            else{
-                Settings.IsLoggedIn = true;
-                Settings.UserEmail = email;
-            }
-        }
-
-
-        //API Stuff 
-
 
 
 

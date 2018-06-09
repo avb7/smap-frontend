@@ -4,19 +4,27 @@ using Prism.Navigation;
 using System.Windows.Input;
 using Prism.Commands;
 using System.Diagnostics;
+using SMAP.Services;
+using SMAP.Models;
+using Refit;
+using System.Collections.Generic;
 
 namespace SMAP.ViewModels
 {
     public class DashboardPageViewModel : INavigatedAware
     {
         INavigationService _navigationService;
-        
-		public ICommand MenuCommand {get; set;}
+
+        public ICommand MenuCommand { get; set; }
+        public ICommand SearchCommand { get; set; }
+
 
         public DashboardPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             MenuCommand = new DelegateCommand(OpenMenuPage);
+            SearchCommand = new DelegateCommand(OnSearch);
+
 
         }
 
@@ -25,23 +33,34 @@ namespace SMAP.ViewModels
             //throw new NotImplementedException();
         }
 
-        public void OnNavigatedTo(NavigationParameters parameters)
+
+
+        private async void OnSearch()
         {
-            //throw new NotImplementedException();
+
         }
 
-        private async void OpenMenuPage(){
+
+        private async void OpenMenuPage()
+        {
+
             Debug.WriteLine("Clicked");
             await _navigationService.NavigateAsync("MenuPage");
         }
 
-		public async void OpenEventsDetail(){
-			await _navigationService.NavigateAsync("EventsDetailPage");
-		}
+        public async void OpenEventsDetail(NavigationParameters parameters)
+        {
+            await _navigationService.NavigateAsync("EventsDetailPage", parameters);
+        }
 
         public async void OpenLogin()
         {
             await _navigationService.NavigateAsync("LoginPage");
+        }
+
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
+            throw new NotImplementedException();
         }
 
         //fill map
