@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SMAP.Views.CreateEventPage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20,30,20,0">
+                <Button
+                    HorizontalOptions="Start"
+                    Text="X"
+                    FontSize="24"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#EABA19"/>
+
+                <Label
+                    VerticalTextAlignment="Center"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"
+                    WidthRequest="150"
+                    HeightRequest="40"
+                    Text="Create an event"
+                    FontSize="30"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#FFFFFF"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Entry
+                    x:Name="Event Title"
+                    Text="Enter event title"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#797979"
+                    />
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Entry
+                    x:Name="Event Address"
+                    Text="Enter address"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#797979"
+                    />
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Entry
+                    x:Name="Event Start Date"
+                    Text="Start date"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#797979"
+                    />
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Entry
+                    x:Name="Event End Date"
+                    Text="End date"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#797979"
+                    />
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+
+
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Entry
+                    x:Name="Event Description"
+                    Text="Description"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#797979"
+                    />
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="20,20,10,0">
+                <Button
+                    Text="Add Friend +"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#797979"
+                    HorizontalOptions="Start"/>
+            </StackLayout>
+
+            <StackLayout Padding="20,30,20,0">
+                <Button
+                    Text="Create"
+                    BackgroundColor="#EABA19"
+                    BorderColor="Transparent"
+                    TextColor="White"
+                    BorderRadius="20"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

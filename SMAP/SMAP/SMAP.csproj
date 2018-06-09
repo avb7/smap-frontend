@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -51,6 +50,26 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\FriendRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddFriendPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CreateEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\YourEventsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -93,6 +112,22 @@
     <Compile Include="Helpers\AuthenticationState.cs" />
     <Compile Include="Helpers\FacebookOAuthToken.cs" />
     <Compile Include="Services\ISmapAPI.cs" />
+    <Compile Include="Views\FriendRequestPage.xaml.cs">
+      <DependentUpon>FriendRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddFriendPage.xaml.cs">
+      <DependentUpon>AddFriendPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CreateEventPage.xaml.cs">
+      <DependentUpon>CreateEventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\YourEventsPage.xaml.cs">
+      <DependentUpon>YourEventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AddFriendPageViewModel.cs" />
+    <Compile Include="Views\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
