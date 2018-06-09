@@ -25,7 +25,7 @@ namespace SMAP.Models
         //yyyy-mm-dd
         public string event_date { get; set; }
         //hh:mm:ss
-        public string start_date { get; set; }
+        public string start_time { get; set; }
         //hh:mm:ss
         public string end_time { get; set; }
 

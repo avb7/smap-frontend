@@ -60,7 +60,7 @@ namespace SMAP.ViewModels
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         //fill map

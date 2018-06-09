@@ -36,7 +36,7 @@
                         FontSize="24"
                         TextColor="White"/>
                     <Label 
-                        Text="FINANCIAL DISTRICT"
+                        Text="{Binding _Street}"
                         FontSize="13"
                         TextColor="White"/>
                 </StackLayout>
@@ -54,14 +54,9 @@
                 <!-- Description -->
                 <StackLayout Padding="0,0,0,10">
                     <Label
-                        Text="Description"
-                        TextColor="White"
-                        FontSize="24"
-                        />
-                    <Label
                         Text="{Binding _Event.description}"
                         TextColor="White"
-                        FontSize="13"
+                        FontSize="13"   
                         />
                 </StackLayout>
                 
@@ -74,7 +69,12 @@
                         FontSize="24"
                         />
                     <Label
-                        Text="{Binding _Event.start_date}"
+                        Text="{Binding _Event.event_date}"
+                        TextColor="White"
+                        FontSize="13"
+                        />
+                    <Label
+                        Text="{Binding _Event.start_time}"
                         TextColor="White"
                         FontSize="13"
                         />
