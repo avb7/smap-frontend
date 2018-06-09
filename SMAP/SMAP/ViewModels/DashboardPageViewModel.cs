@@ -1,5 +1,9 @@
 ﻿using System;
+using Xamarin.Forms.GoogleMaps;
 using Prism.Navigation;
+using System.Windows.Input;
+using Prism.Commands;
+using System.Diagnostics;
 
 namespace SMAP.ViewModels
 {
@@ -7,9 +11,13 @@ namespace SMAP.ViewModels
     {
         INavigationService _navigationService;
 
+        public ICommand MenuCommand { get; set; }
+
         public DashboardPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
+            MenuCommand = new DelegateCommand(OpenMenuPage);
+
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -20,6 +28,11 @@ namespace SMAP.ViewModels
         public void OnNavigatedTo(NavigationParameters parameters)
         {
             //throw new NotImplementedException();
+        }
+
+        public async void OpenMenuPage(){
+            Debug.WriteLine("Clicked");
+            await _navigationService.NavigateAsync("MenuPage");
         }
 
 		public async void OpenEventsDetail(){
@@ -44,6 +57,7 @@ namespace SMAP.ViewModels
         3. ICommands to call these methods 
         
         */
+
 
     }
 }

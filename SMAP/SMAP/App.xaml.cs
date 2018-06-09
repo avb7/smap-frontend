@@ -13,14 +13,17 @@ namespace SMAP
     public partial class App : PrismApplication
     {
         
-
+        public App(){
+            
+        }
 
         public App(IPlatformInitializer initializer = null) : base(initializer) 
         {
             InitializeComponent();
 
+            MainPage = new DashboardPage();
             //START PAGE (Add login checks?)
-            NavigationService.NavigateAsync("DashboardPage");
+            //NavigationService.NavigateAsync("DashboardPage");
         }
 
 

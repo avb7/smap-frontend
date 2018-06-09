@@ -41,8 +41,20 @@
                 HeightRequest="50"
                 BorderThickness="3"
                 BorderColor="#EABA19"
-                Source="DummyDP.png"/>
+                Source="DummyDP.png">
+
+                <controls:CircleImage.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="{Binding MenuCommand}"
+                            NumberOfTapsRequired="1"
+                        />
+                    </controls:CircleImage.GestureRecognizers>
+                    
+               </controls:CircleImage>   
+
+                
             </StackLayout>
+
 
             
             <!-- Search Bar -->
