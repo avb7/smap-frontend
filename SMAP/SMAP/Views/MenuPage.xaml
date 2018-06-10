@@ -45,44 +45,17 @@
                 <StackLayout x:Name="Options">
                     
                 
-                <!-- Your Private Events -->
+                <!-- Your Events -->
                 <StackLayout Padding="0,0,0,5">
                     <Label 
-                        Text="Your private events"
-                        TextColor="White"
+                        Text="Create an Event"
+                        TextColor="#EABA19"
                         FontSize="24"
                         />
                 </StackLayout>
 
-                <!-- Your Private Events -->
-                <StackLayout Padding="0,0,0,5">
-                    <Label 
-                        Text="Your friends"
-                        TextColor="White"
-                        FontSize="24"
-                        />
-                </StackLayout>
 
-                <!-- Your Private Events -->
-                <StackLayout Padding="0,0,0,5">
-                    <Label 
-                        Text="Add friends"
-                        TextColor="White"
-                        FontSize="24"
-                        />
-                </StackLayout>
-                
-
-                <!-- Your Private Events -->
-                <StackLayout Padding="0,0,0,5">
-                    <Label 
-                        Text="Friend requests"
-                        TextColor="White"
-                        FontSize="24"
-                        />
-                </StackLayout>
-
-               </StackLayout>
+            </StackLayout>
 
                 
                 <!-- Sign in sign out -->

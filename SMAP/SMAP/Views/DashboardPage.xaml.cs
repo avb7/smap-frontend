@@ -12,12 +12,12 @@ using SMAP.Services;
 using SMAP.Models;
 using Prism.Navigation;
 
+
 namespace SMAP.Views
 {
     public partial class DashboardPage : ContentPage
     {
 
-     
         public void ShowUserPicture(){
             if(Settings.UserImageUrl != null){
                 CirclePic.Source = Settings.UserImageUrl;
@@ -37,41 +37,48 @@ namespace SMAP.Views
             //Set map style 
             map.MapStyle = MapStyle.FromJson(getMapStyleJson());
 
+
             //TODO Better way to handle icon ref
-            _pinTokyo.Icon = _pinTokyo.Icon = BitmapDescriptorFactory.FromBundle("RedPin.png");
+            //_pinTokyo.Icon = _pinTokyo.Icon = BitmapDescriptorFactory.FromBundle("RedPin.png");
+            //map.Pins.Add(_pinTokyo);
 
-            //TODO Better way to handle event clicks, create methods 
 			map.PinClicked += Map_PinClicked;
-            map.Pins.Add(_pinTokyo);
-
-
 
         }
 
         protected override async void OnAppearing() { 
-            var smapAPI = RestService.For<ISmapAPI>("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1");
-            List<Event> allEvents = await smapAPI.GetAllEvents();
+           
+            try{
+                var smapAPI = RestService.For<ISmapAPI>("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1");
+                List<Event> allEvents = await smapAPI.GetAllEvents();
 
-            List<Pin> pins = new List<Pin>();
+                List<Pin> pins = new List<Pin>();
 
-            foreach (Event _event in allEvents)
-            {
-                Pin _pin = new Pin()
+                foreach (Event _event in allEvents)
                 {
-                    Type = PinType.Place,
-                    Label = _event.name,
-                    Address = _event.location["street"],
-                    Position = new Position(_event.location["latitude"], _event.location["longitude"]),
-                    Icon = BitmapDescriptorFactory.DefaultMarker(Color.LightBlue),
-                    Tag = _event.event_id
-                };
-                _pin.Icon = BitmapDescriptorFactory.FromBundle("GoldPin.png");
-                pins.Add(_pin);
+                    Pin _pin = new Pin()
+                    {
+                        Type = PinType.Place,
+                        Label = _event.name,
+                        Address = _event.location["street"],
+                        Position = new Position(_event.location["latitude"], _event.location["longitude"]),
+                        Icon = BitmapDescriptorFactory.DefaultMarker(Color.LightBlue),
+                        Tag = _event.event_id
+                    };
+                    _pin.Icon = BitmapDescriptorFactory.FromBundle("GoldPin.png");
+                    pins.Add(_pin);
 
+                }
+                foreach (Pin _pin in pins)
+                {
+                    map.Pins.Add(_pin);
+                }
             }
-            foreach(Pin _pin in pins){
-                map.Pins.Add(_pin);
+            catch (Exception e)
+            {
+               await DisplayAlert("No events found", "Please try again later", "ok");
             }
+
 
         }
        

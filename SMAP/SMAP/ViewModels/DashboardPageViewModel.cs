@@ -37,7 +37,7 @@ namespace SMAP.ViewModels
 
         private async void OnSearch()
         {
-
+            await _navigationService.NavigateAsync("SearchPage");
         }
 
 
@@ -57,6 +57,8 @@ namespace SMAP.ViewModels
         {
             await _navigationService.NavigateAsync("LoginPage");
         }
+
+
 
         public void OnNavigatedTo(NavigationParameters parameters)
         {

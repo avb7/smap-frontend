@@ -3,6 +3,7 @@ using SMAP.Models;
 using Refit;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace SMAP.Services
 {
@@ -32,6 +33,9 @@ namespace SMAP.Services
 
         [Get("/events")]
         Task<List<Event>> GetAllEvents();
+
+        [Get("/events")]
+        Task<IEnumerable<Event>> GetAllEventsForSearch();
 
     }
 }

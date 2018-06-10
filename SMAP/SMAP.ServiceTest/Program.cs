@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Refit;
+using GoogleMaps.LocationServices;
+using Newtonsoft.Json;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace SMAP.ServiceTest
 {
@@ -9,90 +13,84 @@ namespace SMAP.ServiceTest
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("SMAP API Tests!!");
+            Console.WriteLine("SMAP Location test");
+
+            /*
+            var address = "9175 Judicial Drive";
+
+            var locationService = new GoogleLocationService();
+            var point = locationService.GetLatLongFromAddress(address);
+
+
+            string latitude = point.Latitude.ToString();
+            string longitude = point.Longitude.ToString();
+
+            Console.WriteLine(latitude + longitude);
+
+      
+
+            Dictionary<string, dynamic> _location = new Dictionary<string, dynamic>();
+            _location["street"] = "9175 judicial drive";
+            _location["city"] = "San diego";
+            _location["state"] = "CA";
+            _location["zip"] = 92122;
+            _location["country"] = "USA";
+            _location["latitude"] = 58.9699756;
+            _location["longitude"] = 52.292920;
+
+
+            //location, 
+            Event _event = new Event()
+            {
+                name = "Dummy",
+                type="",
+                event_date = "2018-01-10",
+                start_time = "08:08:09",
+                end_time = "08:08:09",
+                is_public = true,
+                is_free = true,
+                points = 100,
+                location = _location
+
+            };
+
+            string json = JsonConvert.SerializeObject(_event);
+            Console.WriteLine(json);
 
             var smapAPI = RestService.For<ISmapAPI>("https://ss6aagzajf.execute-api.us-east-2.amazonaws.com/stage_1");
 
 
-            //GET USER TEST 
-            User user_1 = smapAPI.GetUser("test1").GetAwaiter().GetResult();
+            try{
+                smapAPI.CreateEvent(_event).GetAwaiter().GetResult();
+            }
+            catch(Exception e){
+                throw e;
+            }
+             
 
-            Console.WriteLine(user_1.last_name);
+
+            //Console.WriteLine(user_1.last_name);
 
 
-            //POST USER TEST 
+            //POST USER TEST */
+
+            string address = "9115 Judicial Drive";
+            var json = new WebClient().DownloadString("http://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&sensor=true");
+
+            dynamic data = JObject.Parse(json);
+
+            try{
+                Console.WriteLine(data.results[0].geometry.location.lat + ", " + data.results[0].geometry.location.lng);
+            }
+            catch(Exception e){
+                Console.WriteLine("Invalid Address");
+            } 
+
+
+
         }
 
-    }
-
-    public class Event
-    {
-        int Id { get; set; }
-        string name { get; set; }
-        string image { get; set; }
-        string type { get; set; }
-
-        string host { get; set; }
-        string description { get; set; }
-        public IDictionary<string, string> location { get; set; }
-
-        //yyyy-mm-dd
-        string event_date { get; set; }
-        //hh:mm:ss
-        string start_date { get; set; }
-        //hh:mm:ss
-        string end_time { get; set; }
-
-        bool is_public { get; set; }
-        bool is_free { get; set; }
-        int points { get; set; }
-
-
-        public Event()
-        {
-        }
-    }
-
-    public class User
-    {
-
-        public int UserId { get; set; }
-        public string display_name { get; set; }
-        public string profile_pic { get; set; }
-        public string email { get; set; }
-        public string first_name { get; set; }
-        public string last_name { get; set; }
-
-        //default false 
-        public bool mission_curator { get; set; }
-
-        //string yyyy-mm-dd
-        public string birthday { get; set; }
-
-        public IDictionary<string, string> location { get; set; }
-        public User()
-        {
-        }
-    }
-
-    public interface ISmapAPI
-    {
-        [Get("/users?email={email_id}")]
-        Task<User> GetUser(string email_id);
-
-        [Post("/users")]
-        Task CreateUser([Body] User user);
-
-        [Post("/friends")]
-        Task AddFriend([Body] User user1, User user2);
-
-        //statusType is friends, requests, or responses 
-        [Get("/friends?user={email_id}&status={statusType}")]
-        Task<User> GetUser(string email_id, string statusType);
-
-        [Post("/events")]
-        Task CreateEvent([Body] Event _event);
-
+       
     }
 
 }

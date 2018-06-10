@@ -1,7 +1,5 @@
 ﻿using System;
 using Newtonsoft.Json;
-using SMAP.Services;
-using SMAP.Models;
 using System.Threading.Tasks;
 
 using System.Net.Http;
@@ -12,6 +10,7 @@ using System.Net;
 using System.IO;
 using System.Xml;
 using Refit;
+using SMAP.Models;
 
 namespace SMAP.Test
 {
@@ -46,7 +45,7 @@ namespace SMAP.Test
         //string yyyy-mm-dd
         public string birthday { get; set; }
 
-        public IDictionary<int, Location> location { get; set; }
+        public IDictionary<int, int> location { get; set; }
         public User()
         {
         }

@@ -43,7 +43,10 @@
 
 
                 <!-- Image -->
-                <Image Source="{Binding _Event.image}"/>
+                <Image 
+                    Aspect="AspectFit"
+                    HorizontalOptions="FillAndExpand"
+                    Source="{Binding _Event.image}"/>
                 
             </StackLayout>
 

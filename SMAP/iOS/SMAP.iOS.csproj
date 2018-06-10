@@ -181,6 +181,7 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="GoogleMaps.LocationServices.readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="SMAP.Views.CreateEventPage"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="SMAP.Views.CreateEventPage"
              BackgroundColor="Black">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout VerticalOptions="FillAndExpand">
             <StackLayout Orientation="Horizontal" Padding="20,30,20,0">
                 <Button
                     HorizontalOptions="Start"
@@ -26,12 +29,17 @@
             </StackLayout>
 
             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+
+             <StackLayout Padding="0,0,0,10">
+                    <Label Text="TELL US ABOUT YOUR EVENT" TextColor="White" FontSize="17"/>
+             </StackLayout>
+                    
                 <Entry
                     x:Name="EventTitle"
-                    Text="Enter event title"
+                    Placeholder="Enter event title"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
-                    TextColor="#797979"
+                    TextColor="#EABA19"
                     />
                 <BoxView
                     HorizontalOptions="FillAndExpand"
@@ -39,56 +47,15 @@
                     Color="#797979"/>
             </StackLayout>
 
-            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
-                <Entry
-                    x:Name="EventAddress"
-                    Text="Enter address"
-                    BorderColor="Transparent"
-                    BackgroundColor="Transparent"
-                    TextColor="#797979"
-                    />
-                <BoxView
-                    HorizontalOptions="FillAndExpand"
-                    HeightRequest="1"
-                    Color="#797979"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
-                <Entry
-                    x:Name="EventStartDate"
-                    Text="Start date"
-                    BorderColor="Transparent"
-                    BackgroundColor="Transparent"
-                    TextColor="#797979"
-                    />
-                <BoxView
-                    HorizontalOptions="FillAndExpand"
-                    HeightRequest="1"
-                    Color="#797979"/>
-            </StackLayout>
-
-            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
-                <Entry
-                    x:Name="EventEndDate"
-                    Text="End date"
-                    BorderColor="Transparent"
-                    BackgroundColor="Transparent"
-                    TextColor="#797979"
-                    />
-                <BoxView
-                    HorizontalOptions="FillAndExpand"
-                    HeightRequest="1"
-                    Color="#797979"/>
-            </StackLayout>
 
 
             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
                 <Entry
                     x:Name="EventDescription"
-                    Text="Description"
+                    Placeholder="Description"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
-                    TextColor="#797979"
+                    TextColor="#EABA19"
                     />
                 <BoxView
                     HorizontalOptions="FillAndExpand"
@@ -96,17 +63,90 @@
                     Color="#797979"/>
             </StackLayout>
 
-            <StackLayout Orientation="Horizontal" Padding="20,20,10,0">
-                <Button
-                    Text="Add Friends +"
+
+             <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Label
+                    Text="Event date"
                     BorderColor="Transparent"
                     BackgroundColor="Transparent"
-                    TextColor="#797979"
-                    HorizontalOptions="Start"/>
+                    TextColor="#EABA19"
+                    />
+                <DatePicker x:Name="EventDatePicker"/>
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
             </StackLayout>
 
+                
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Label
+                    Text="Start time"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#EABA19"
+                    />
+                <TimePicker x:Name="StartTimePicker"/>
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                <Label
+                    Text="End time"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#EABA19"
+                    />
+                <TimePicker x:Name="EndTimePicker"/>
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+
+            
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+
+                <StackLayout Padding="0,0,0,10">
+                    <Label Text="WHERE IN SAN DIEGO?" TextColor="White" FontSize="17"/>
+                </StackLayout>
+                    
+                <Entry
+                    x:Name="EventStreet"
+                    Placeholder="Street"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#EABA19"
+                    />
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>
+                
+            <StackLayout Orientation="Vertical" Padding="20,30,20,0">
+                    
+                <Entry
+                    x:Name="EventZip"
+                    Placeholder="Zip Code"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    TextColor="#EABA19"
+                    />
+                <BoxView
+                    HorizontalOptions="FillAndExpand"
+                    HeightRequest="1"
+                    Color="#797979"/>
+            </StackLayout>                
+
+                
             <StackLayout Padding="20,30,20,0">
                 <Button
+                    Clicked="SubmitForm"
+                    x:Name="EventSubmitButton"    
                     Text="Create"
                     BackgroundColor="#EABA19"
                     BorderColor="Transparent"
@@ -114,5 +154,6 @@
                     BorderRadius="20"/>
             </StackLayout>
         </StackLayout>
+       </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -45,12 +45,11 @@ namespace SMAP.ViewModels
             this._Event = event1;
             this._Street = (string)event1.location["street"];
             this._Street = this._Street.ToUpper();
-            Debug.WriteLine(this._Event.description);
         }
 
 
 
-		public EventsDetailPageViewModel(INavigationService navigationService)
+        public EventsDetailPageViewModel(INavigationService navigationService)
         {
             _navigationService = navigationService;
             CloseWindowCommand = new DelegateCommand(OnCloseWindow);
