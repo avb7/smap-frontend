@@ -57,6 +57,7 @@ namespace SMAP.Test
         [Get("/users?email={email_id}")]
         Task<User> GetUser(string email_id);
     }
+}
 
    /* class TestService{
 
