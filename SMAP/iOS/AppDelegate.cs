@@ -26,12 +26,6 @@ namespace SMAP.iOS
             //Image circle
             ImageCircle.Forms.Plugin.iOS.ImageCircleRenderer.Init();
 
-            // Code for starting up the Xamarin Test Cloud Agent
-#if DEBUG
-
-            Xamarin.Calabash.Start();
-#endif
-
 
 
             LoadApplication(new App(new iOSInitializer()));

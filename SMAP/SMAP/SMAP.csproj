@@ -193,15 +193,6 @@
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net45+win8+wpa81\System.Net.Http.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="Auth0.Core">
-      <HintPath>..\packages\Auth0.Core.3.6.0\lib\portable-net45+win8+wpa81\Auth0.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.AuthenticationApi">
-      <HintPath>..\packages\Auth0.AuthenticationApi.3.6.0\lib\portable-net45+win8+wpa81\Auth0.AuthenticationApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Auth0.ManagementApi">
-      <HintPath>..\packages\Auth0.ManagementApi.3.6.0\lib\portable-net45+win8+wpa81\Auth0.ManagementApi.dll</HintPath>
-    </Reference>
     <Reference Include="Refit">
       <HintPath>..\packages\refit.2.4.1\lib\Portable-Net45+NetCore45+WP8+WPA81\Refit.dll</HintPath>
     </Reference>
