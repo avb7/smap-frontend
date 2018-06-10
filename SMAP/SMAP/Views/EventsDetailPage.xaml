@@ -89,7 +89,7 @@
 
             <!-- end of Content Stack-->
 
-            <!-- Action button stack -->
+            <!-- Action button stack 
             <StackLayout Grid.Row="1" Padding="50,0,50,0">
 
                 <Button
@@ -100,7 +100,7 @@
                     BorderRadius="20"
                     />
                 
-            </StackLayout>
+            </StackLayout>-->
 
             
         </Grid>
