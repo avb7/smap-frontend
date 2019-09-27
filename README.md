@@ -1,4 +1,4 @@
-# SMAP.Frontend
+# SMAP Frontend 
 
 Welcome to the Smap's front-end repository. The purpose of the README is to establish some core ideas and principles with which we'll be building the front-end. 
 
